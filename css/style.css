@@ -1178,6 +1178,11 @@ body {
     
     .hero-subtitle {
         font-size: 20px;
+        color: #2C2416;
+    }
+    
+    .hero-description {
+        color: #2C2416;
     }
     
     .section-title {
