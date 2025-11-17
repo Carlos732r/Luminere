@@ -126,6 +126,7 @@ const searchBtns = document.querySelectorAll('.search-btn');
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
+    loadCartFromStorage(); // Carrega o carrinho salvo primeiro
     renderProducts();
     setupEventListeners();
     updateCart();
@@ -177,6 +178,28 @@ function createProductCard(product, type) {
 }
 
 // Cart Functions
+function loadCartFromStorage() {
+    const savedCart = localStorage.getItem('lumineCart');
+    if (savedCart) {
+        try {
+            cart = JSON.parse(savedCart);
+            console.log('Carrinho carregado:', cart);
+        } catch (error) {
+            console.error('Erro ao carregar carrinho:', error);
+            cart = [];
+        }
+    }
+}
+
+function saveCartToStorage() {
+    try {
+        localStorage.setItem('lumineCart', JSON.stringify(cart));
+        console.log('Carrinho salvo:', cart);
+    } catch (error) {
+        console.error('Erro ao salvar carrinho:', error);
+    }
+}
+
 function addToCart(productId) {
     const allProducts = [...acessorios, ...velas];
     const product = allProducts.find(p => p.id === productId);
@@ -190,6 +213,7 @@ function addToCart(productId) {
             cart.push({ ...product, quantity: 1 });
         }
         
+        saveCartToStorage(); // Salva após adicionar
         updateCart();
         openCart();
         showNotification('Produto adicionado ao carrinho!');
@@ -198,7 +222,9 @@ function addToCart(productId) {
 
 function removeFromCart(productId) {
     cart = cart.filter(item => item.id !== productId);
+    saveCartToStorage(); // Salva após remover
     updateCart();
+    showNotification('Produto removido do carrinho');
 }
 
 function updateCart() {
@@ -250,6 +276,13 @@ function checkout() {
     const message = `Olá!+Gostaria+de+fazer+um+pedido:%0A%0A${items}%0A%0ATotal:+R$+${total.toFixed(2).replace('.', ',')}`;
     
     window.open(`https://wa.me/5518997001660?text=${message}`, '_blank');
+    
+    // Limpar carrinho após finalizar pedido
+    cart = [];
+    saveCartToStorage();
+    updateCart();
+    closeCart();
+    showNotification('Pedido enviado! Aguarde nosso contato no WhatsApp.');
 }
 
 // Event Listeners
