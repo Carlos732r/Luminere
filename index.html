@@ -157,6 +157,43 @@
     </div>
     <div class="cart-overlay" id="cartOverlay"></div>
 
+    <!-- Product Modal -->
+    <div class="product-modal" id="productModal">
+        <div class="product-modal-content">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <div class="product-modal-body">
+                <div>
+                    <img src="" alt="" class="product-modal-image" id="modalImage">
+                </div>
+                <div class="product-modal-info">
+                    <div class="product-modal-category" id="modalCategory"></div>
+                    <h2 class="product-modal-name" id="modalName"></h2>
+                    <p class="product-modal-description" id="modalDescription"></p>
+                    <div class="product-modal-price" id="modalPrice"></div>
+                    
+                    <div class="product-modal-actions">
+                        <div class="quantity-selector">
+                            <span class="quantity-label">Quantidade:</span>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn" id="decreaseQty">-</button>
+                                <input type="number" class="quantity-input" id="modalQuantity" value="1" min="1" readonly>
+                                <button class="quantity-btn" id="increaseQty">+</button>
+                            </div>
+                        </div>
+                        <button class="btn-primary" id="addToCartModal">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="hero-background"></div>
@@ -307,7 +344,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Lúmine – Desenvolvido por <strong><a href="https://www.devdigitalbr.com.br" target="_blank">Dev Digital BR</a></strong></p>
+                <p>&copy; 2025 Lúmine – Desenvolvido por <strong>Dev Digital BR</strong></p>
             </div>
         </div>
     </footer>
