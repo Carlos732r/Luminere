@@ -162,8 +162,19 @@
         <div class="product-modal-content">
             <button class="close-modal" id="closeModal">&times;</button>
             <div class="product-modal-body">
-                <div>
+                <div class="product-modal-gallery">
+                    <button class="gallery-arrow gallery-prev" id="prevImage">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
                     <img src="" alt="" class="product-modal-image" id="modalImage">
+                    <button class="gallery-arrow gallery-next" id="nextImage">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                    <div class="gallery-indicators" id="galleryIndicators"></div>
                 </div>
                 <div class="product-modal-info">
                     <div class="product-modal-category" id="modalCategory"></div>

@@ -219,8 +219,12 @@ const modalQuantity = document.getElementById('modalQuantity');
 const decreaseQtyBtn = document.getElementById('decreaseQty');
 const increaseQtyBtn = document.getElementById('increaseQty');
 const addToCartModalBtn = document.getElementById('addToCartModal');
+const prevImageBtn = document.getElementById('prevImage');
+const nextImageBtn = document.getElementById('nextImage');
+const galleryIndicators = document.getElementById('galleryIndicators');
 
 let currentProduct = null;
+let currentImageIndex = 0;
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
@@ -307,8 +311,16 @@ function openProductModal(productId) {
     
     if (product) {
         currentProduct = product;
-        modalImage.src = product.image;
+        currentImageIndex = 0;
+        
+        // Get images array
+        const images = product.images || [product.image];
+        
+        // Set initial image
+        modalImage.src = images[0];
         modalImage.alt = product.name;
+        
+        // Set product info
         modalCategory.textContent = product.category;
         modalName.textContent = product.name;
         
@@ -319,8 +331,91 @@ function openProductModal(productId) {
         modalPrice.textContent = `R$ ${product.price.toFixed(2).replace('.', ',')}`;
         modalQuantity.value = 1;
         
+        // Setup gallery
+        setupGallery(images);
+        
         productModal.classList.add('active');
         document.body.style.overflow = 'hidden';
+    }
+}
+
+function setupGallery(images) {
+    // Show/hide arrows based on number of images
+    if (images.length <= 1) {
+        prevImageBtn.classList.add('hidden');
+        nextImageBtn.classList.add('hidden');
+        galleryIndicators.innerHTML = '';
+    } else {
+        prevImageBtn.classList.remove('hidden');
+        nextImageBtn.classList.remove('hidden');
+        
+        // Create indicators
+        galleryIndicators.innerHTML = images.map((_, index) => 
+            `<div class="gallery-indicator ${index === 0 ? 'active' : ''}" onclick="goToImage(${index})"></div>`
+        ).join('');
+    }
+    
+    updateGalleryButtons();
+}
+
+function goToImage(index) {
+    if (!currentProduct) return;
+    
+    const images = currentProduct.images || [currentProduct.image];
+    currentImageIndex = index;
+    modalImage.src = images[currentImageIndex];
+    
+    // Update indicators
+    const indicators = galleryIndicators.querySelectorAll('.gallery-indicator');
+    indicators.forEach((indicator, i) => {
+        if (i === currentImageIndex) {
+            indicator.classList.add('active');
+        } else {
+            indicator.classList.remove('active');
+        }
+    });
+    
+    updateGalleryButtons();
+}
+
+function nextImage() {
+    if (!currentProduct) return;
+    
+    const images = currentProduct.images || [currentProduct.image];
+    if (currentImageIndex < images.length - 1) {
+        goToImage(currentImageIndex + 1);
+    }
+}
+
+function prevImage() {
+    if (!currentProduct) return;
+    
+    if (currentImageIndex > 0) {
+        goToImage(currentImageIndex - 1);
+    }
+}
+
+function updateGalleryButtons() {
+    if (!currentProduct) return;
+    
+    const images = currentProduct.images || [currentProduct.image];
+    
+    // Disable prev button on first image
+    if (currentImageIndex === 0) {
+        prevImageBtn.style.opacity = '0.5';
+        prevImageBtn.style.cursor = 'not-allowed';
+    } else {
+        prevImageBtn.style.opacity = '1';
+        prevImageBtn.style.cursor = 'pointer';
+    }
+    
+    // Disable next button on last image
+    if (currentImageIndex === images.length - 1) {
+        nextImageBtn.style.opacity = '0.5';
+        nextImageBtn.style.cursor = 'not-allowed';
+    } else {
+        nextImageBtn.style.opacity = '1';
+        nextImageBtn.style.cursor = 'pointer';
     }
 }
 
@@ -328,6 +423,7 @@ function closeProductModal() {
     productModal.classList.remove('active');
     document.body.style.overflow = '';
     currentProduct = null;
+    currentImageIndex = 0;
 }
 
 function addToCart(productId, quantity = 1) {
@@ -449,6 +545,23 @@ function setupEventListeners() {
     productModal.addEventListener('click', (e) => {
         if (e.target === productModal) {
             closeProductModal();
+        }
+    });
+    
+    // Gallery navigation
+    prevImageBtn.addEventListener('click', prevImage);
+    nextImageBtn.addEventListener('click', nextImage);
+    
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+        if (productModal.classList.contains('active')) {
+            if (e.key === 'ArrowLeft') {
+                prevImage();
+            } else if (e.key === 'ArrowRight') {
+                nextImage();
+            } else if (e.key === 'Escape') {
+                closeProductModal();
+            }
         }
     });
     
