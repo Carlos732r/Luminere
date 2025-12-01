@@ -676,7 +676,7 @@ body {
 .hero-subtitle {
     font-family: var(--font-primary);
     font-size: 28px;
-    color: var(--primary);
+    color: #000;
     margin-bottom: 20px;
     font-weight: 400;
     animation: fadeInUp 1s ease 0.2s backwards;
@@ -694,7 +694,7 @@ body {
 
 .hero-description {
     font-size: 18px;
-    color: var(--text-light);
+    color: #000;
     margin-bottom: 40px;
     animation: fadeInUp 1s ease 0.6s backwards;
 }
@@ -1462,7 +1462,7 @@ body {
     }
     
     .logo-image-scrolled {
-        height: 55px;
+        height: 80px;
     }
     
     .hero {
