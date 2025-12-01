@@ -73,7 +73,7 @@ body {
 }
 
 .logo-image {
-    height: 80px;
+    height: 110px;
     width: auto;
     cursor: pointer;
     transition: var(--transition);
@@ -298,7 +298,7 @@ body {
 }
 
 .logo-image-scrolled {
-    height: 60px;
+    height: 85px;
     width: auto;
     cursor: pointer;
     transition: var(--transition);
@@ -321,7 +321,7 @@ body {
 /* Search Dropdown */
 .search-dropdown {
     background: var(--white);
-    border-top: 1px solid var(--border);
+    border-top: none;
     max-height: 0;
     overflow: hidden;
     transition: var(--transition);
@@ -542,7 +542,7 @@ body {
 
 .cart-footer {
     padding: 20px 30px;
-    border-top: 2px solid var(--border);
+    border-top: none;
 }
 
 .cart-total {
@@ -1394,14 +1394,14 @@ body {
         font-size: 28px;
     }
     
-    .close-modal {
-        top: 10px;
-        right: 10px;
-        width: 35px;
-        height: 35px;
-        font-size: 20px;
+            .logo-image {
+                height: 95px;
+            }
+            .logo-image-scrolled {
+                height: 75px;
+            }
     }
-}
+
 @keyframes fadeInUp {
     from {
         opacity: 0;
