@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lúmine - Ilumine seu estilo. Inspire seus momentos.</title>
+    <meta name="description" content="Lúmine é a expressão da elegância que ilumina. Acessórios e velas aromáticas que refletem o melhor de você.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Principal -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="imagens/logo.png" alt="Lúmine" class="logo-image">
+                </div>
+                
+                <div class="search-box-main">
+                    <input type="text" id="searchInput" placeholder="Olá, o que você procura?" class="search-input">
+                    <button class="search-btn" id="searchBtn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="header-actions">
+                    <button class="icon-btn cart-btn" id="cartBtn" title="Carrinho">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                    <a href="https://wa.me/5518997001660" class="whatsapp-btn-header" target="_blank" title="WhatsApp">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                        </svg>
+                    </a>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Submenu -->
+        <nav class="submenu" id="submenu">
+            <div class="container">
+                <ul class="submenu-list">
+                    <li><a href="#home" class="submenu-link">Início</a></li>
+                    <li><a href="#sobre" class="submenu-link">Sobre</a></li>
+                    <li><a href="#acessorios" class="submenu-link">Acessórios</a></li>
+                    <li><a href="#momentos" class="submenu-link">Momentos</a></li>
+                    <li><a href="#novidades" class="submenu-link">Novidades</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Header Scrolled (Compacto) -->
+    <header class="header-scrolled" id="headerScrolled">
+        <div class="container">
+            <div class="header-scrolled-content">
+                <button class="mobile-menu-btn" id="mobileMenuBtnScrolled">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <div class="logo-center">
+                    <img src="imagens/logo.png" alt="Lúmine" class="logo-image-scrolled">
+                </div>
+                
+                <div class="header-actions-scrolled">
+                    <button class="icon-btn search-toggle" id="searchToggle" title="Buscar">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                    <button class="icon-btn cart-btn" id="cartBtnScrolled" title="Carrinho">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                        <span class="cart-count" id="cartCountScrolled">0</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Search Bar Dropdown -->
+        <div class="search-dropdown" id="searchDropdown">
+            <div class="container">
+                <div class="search-box-dropdown">
+                    <input type="text" id="searchInputScrolled" placeholder="Olá, o que você procura?" class="search-input">
+                    <button class="search-btn" id="searchBtnScrolled">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.35-4.35"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay">
+        <div class="mobile-menu-content">
+            <button class="close-mobile-menu" id="closeMobileMenu">&times;</button>
+            <nav class="mobile-nav">
+                <ul class="mobile-nav-list">
+                    <li><a href="#home" class="mobile-nav-link">Início</a></li>
+                    <li><a href="#sobre" class="mobile-nav-link">Sobre</a></li>
+                    <li><a href="#acessorios" class="mobile-nav-link">Acessórios</a></li>
+                    <li><a href="#momentos" class="mobile-nav-link">Momentos</a></li>
+                    <li><a href="#novidades" class="mobile-nav-link">Novidades</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <!-- WhatsApp Flutuante -->
+    <a href="https://wa.me/5518997001660?text=Vim+pelo+site,+tenho+interesse+como+funciona?" class="whatsapp-float" target="_blank" title="Falar no WhatsApp">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+        </svg>
+    </a>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>Seu Carrinho</h3>
+            <button class="close-cart" id="closeCart">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Seu carrinho está vazio</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">R$ 0,00</span>
+            </div>
+            <button class="btn-primary" id="checkoutBtn">Finalizar Pedido</button>
+        </div>
+    </div>
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Product Modal -->
+    <div class="product-modal" id="productModal">
+        <div class="product-modal-content">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <div class="product-modal-body">
+                <div class="product-modal-gallery">
+                    <button class="gallery-arrow gallery-prev" id="prevImage">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+                    <img src="" alt="" class="product-modal-image" id="modalImage">
+                    <button class="gallery-arrow gallery-next" id="nextImage">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                    <div class="gallery-indicators" id="galleryIndicators"></div>
+                </div>
+                <div class="product-modal-info">
+                    <div class="product-modal-category" id="modalCategory"></div>
+                    <h2 class="product-modal-name" id="modalName"></h2>
+                    <p class="product-modal-description" id="modalDescription"></p>
+                    <div class="product-modal-price" id="modalPrice"></div>
+                    
+                    <div class="product-modal-actions">
+                        <div class="quantity-selector">
+                            <span class="quantity-label">Quantidade:</span>
+                            <div class="quantity-controls">
+                                <button class="quantity-btn" id="decreaseQty">-</button>
+                                <input type="number" class="quantity-input" id="modalQuantity" value="1" min="1" readonly>
+                                <button class="quantity-btn" id="increaseQty">+</button>
+                            </div>
+                        </div>
+                        <button class="btn-primary" id="addToCartModal">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="9" cy="21" r="1"></circle>
+                                <circle cx="20" cy="21" r="1"></circle>
+                                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                            </svg>
+                            Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-subtitle">Ilumine seu estilo. Inspire seus momentos.</h2>
+                <h1 class="hero-title">Peças e aromas que refletem o melhor de você.</h1>
+                <p class="hero-description">Descubra a elegância que ilumina cada detalhe da sua vida</p>
+                <div class="hero-buttons">
+                    <a href="#acessorios" class="btn-primary">Explorar Coleção</a>
+                    <a href="https://wa.me/5518997001660" class="btn-secondary" target="_blank">Falar no WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section class="about" id="sobre">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">Lúmine é a expressão da elegância que ilumina.</h2>
+                <div class="about-text">
+                    <p>Criada para quem valoriza o brilho dos detalhes e a harmonia entre beleza e sofisticação, a marca reúne duas experiências que refletem exclusividade e estilo.</p>
+                    
+                    <p>Na <strong>Lúmine Acessórios</strong>, cada peça é cuidadosamente selecionada para traduzir sofisticação e autenticidade — brincos, colares, pulseiras, braceletes e tornozeleiras que realçam a personalidade com sutileza e encanto.</p>
+                    
+                    <p>Na <strong>Lúmine Momentos</strong>, o requinte encontra o aconchego em velas aromatizadas que despertam os sentidos e transformam qualquer ambiente em uma experiência de bem-estar e elegância.</p>
+                    
+                    <p class="about-signature">Lúmine - o brilho que transforma momentos em memórias e estilo em essência</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefícios -->
+    <section class="benefits">
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">✨</div>
+                    <h3>Peças de alta qualidade</h3>
+                    <p>Seleção criteriosa de acessórios que valorizam sua beleza</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🌸</div>
+                    <h3>Experiência sensorial única</h3>
+                    <p>Aromas e texturas que despertam emoções</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">💎</div>
+                    <h3>Acessórios que encantam</h3>
+                    <p>Design sofisticado para todos os momentos</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🕯️</div>
+                    <h3>Aromas que transformam</h3>
+                    <p>Velas que criam atmosferas memoráveis</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎁</div>
+                    <h3>Presentes especiais</h3>
+                    <p>Ideal para quem você ama</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">👑</div>
+                    <h3>Curadoria exclusiva</h3>
+                    <p>Cada item escolhido com dedicação</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Acessórios -->
+    <section class="products" id="acessorios">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Lúmine Acessórios</h2>
+                <p class="section-subtitle">Elegância que realça sua personalidade</p>
+            </div>
+            <div class="products-grid" id="acessoriosGrid">
+                <!-- Products will be loaded by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Momentos -->
+    <section class="products products-alt" id="momentos">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Lúmine Momentos</h2>
+                <p class="section-subtitle">Velas aromáticas que transformam ambientes</p>
+            </div>
+            <div class="products-grid" id="momentosGrid">
+                <!-- Products will be loaded by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter" id="novidades">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2 class="section-title">Receba novidades e exclusividades Lúmine</h2>
+                <p>Fique por dentro dos lançamentos e promoções especiais</p>
+                <form class="newsletter-form" id="newsletterForm">
+                    <div class="form-group">
+                        <input type="text" id="nome" placeholder="Nome completo" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" id="telefone" placeholder="Telefone (WhatsApp)" required>
+                    </div>
+                    <div class="form-group">
+                        <select id="interesse" required>
+                            <option value="">Produto de interesse</option>
+                            <option value="acessorios">Acessórios</option>
+                            <option value="velas">Velas Aromáticas</option>
+                            <option value="ambos">Ambos</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn-primary">Receber novidades</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>LÚMINE</h3>
+                    <p>O luxo de brilhar em cada detalhe</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <p>WhatsApp: (18) 99700-1660</p>
+                    <div class="social-links">
+                        <a href="https://instagram.com/luminepp" target="_blank" aria-label="Instagram">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Lúmine – Desenvolvido por <strong>Dev Digital BR</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
