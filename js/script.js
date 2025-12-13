@@ -1,4 +1,5 @@
 // Produtos Database
+/* TEMPORARIAMENTE OCULTO - ACESSÓRIOS
 const acessorios = [
     {
         id: 1,
@@ -49,6 +50,10 @@ const acessorios = [
         image: "imagens/conjunto-celeste.jpg"
     }
 ];
+FIM DOS ACESSÓRIOS OCULTOS */
+
+// ADICIONADO: Array vazio para manter o funcionamento do site enquanto os acessórios estão ocultos
+const acessorios = []; 
 
 const velas = [
     {
@@ -234,13 +239,20 @@ document.addEventListener('DOMContentLoaded', () => {
     updateCart();
 });
 
-// Render Products
+// Render Products (CORRIGIDO PARA NÃO TRAVAR SE UMA SEÇÃO ESTIVER OCULTA)
 function renderProducts() {
     const acessoriosGrid = document.getElementById('acessoriosGrid');
     const momentosGrid = document.getElementById('momentosGrid');
     
-    acessoriosGrid.innerHTML = acessorios.map(product => createProductCard(product, 'acessório')).join('');
-    momentosGrid.innerHTML = velas.map(product => createProductCard(product, 'vela')).join('');
+    // Só tenta renderizar acessórios se o elemento existir no HTML
+    if (acessoriosGrid) {
+        acessoriosGrid.innerHTML = acessorios.map(product => createProductCard(product, 'acessório')).join('');
+    }
+    
+    // Só tenta renderizar velas se o elemento existir no HTML
+    if (momentosGrid) {
+        momentosGrid.innerHTML = velas.map(product => createProductCard(product, 'vela')).join('');
+    }
 }
 
 function createProductCard(product, type) {
